@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="80dp"
+    android:layout_height="40dp"
+    android:background="@color/white"
+    android:id="@+id/rly_popup_select_by_province_rv_item_province"
+    >
+    <ImageView
+        android:id="@+id/iv_popup_select_by_province_rv_item_province"
+        android:layout_width="11.7dp"
+        android:layout_height="13dp"
+        android:background="@mipmap/redloc"
+        android:layout_toLeftOf="@id/tv_popup_select_by_province_rv_item_province"
+        android:layout_centerVertical="true"
+        />
+    <TextView
+        android:id="@+id/tv_popup_select_by_province_rv_item_province"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="山东"
+        android:textColor="@color/red"
+        android:textSize="12sp"
+        android:layout_centerInParent="true"
+        />
+    <TextView
+        android:id="@+id/tv_popup_select_by_province_rv_item_select_num"
+        android:layout_width="20dp"
+        android:layout_height="15dp"
+        android:background="@drawable/red_round_shape"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="10sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        />
+</RelativeLayout>

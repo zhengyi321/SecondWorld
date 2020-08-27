@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:id="@+id/lly_village_shop_more"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:orientation="horizontal"
+            android:background="@drawable/gray_half_round_shape"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="34dp">
+        <EditText
+            android:id="@+id/et_village_shop_more_place"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:hint="请输入地域"
+            android:textColorHint="@color/gray"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:paddingLeft="10dp"
+            />
+        <Button
+            android:id="@+id/bt_village_shop_more_search"
+            android:layout_width="50dp"
+            android:layout_height="34dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:text="搜索"
+            android:background="@drawable/green_half_round_shape"
+          android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ececec"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="店名"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
+                />
+            <EditText
+                android:id="@+id/et_village_shop_more_shopname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入店铺名"
+                android:textColorHint="@color/gray"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:background="@drawable/gray_half_round_shape"
+                android:padding="10dp"
+                />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/bt_village_shop_more_search_cancel"
+            android:layout_width="50dp"
+            android:layout_height="34dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:text="取消"
+            android:background="@drawable/green_half_round_shape"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gray_half_round_shape"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:visibility="gone"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/searchicon"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="搜索行业"
+                android:textColor="@color/gray"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#ececec"
+        />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:background="#ececec"
+        >
+
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/rfl_village_shop_more"
+        android:layout_width="match_parent"
+        app:srlEnableFooterFollowWhenLoadFinished="true"
+            android:background="#ececec"
+        android:layout_height="match_parent">
+
+        <!--下拉刷新用的Header-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+            >
+            <ProgressBar
+
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@null"
+                android:indeterminateDrawable="@drawable/loading_anim"
+                android:indeterminateBehavior="repeat"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_village_shop_more"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ececec"
+            />
+
+
+        <!--上拉加载用的Footer-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+
+            >
+            <ProgressBar
+                android:id="@+id/pb_village_shop_more_loading"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@null"
+                android:indeterminateDrawable="@drawable/loading_anim"
+                android:indeterminateBehavior="repeat"
+                android:layout_centerInParent="true"
+                />
+            <include layout="@layout/common_rv_nomoredata_splitview"/>
+        </RelativeLayout>
+        <!-- <com.scwang.smartrefresh.layout.footer.FalsifyFooter
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"/>-->
+        <!--  <com.zhyan.secondworld.widget.smartrefresh.foot.MRefreshFooter
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              />-->
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

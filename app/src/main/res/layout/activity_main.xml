@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+   <!-- <com.baidu.mapapi.map.MapView
+        android:id="@+id/mv_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />-->
+<!--    <include layout="@layout/activity_main_include_topbar_rly"/>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/white_acute_angle_shape"
+
+        >
+       <!-- android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"-->
+        <FrameLayout
+            android:id="@+id/p_main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:background="@color/transparent"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@mipmap/touying"
+            android:layout_alignParentBottom="true"/>
+        <include layout="@layout/activity_main_include_bottom_rly"
+
+            />
+
+    </RelativeLayout>
+   <!-- <com.tencent.tencentmap.mapsdk.maps.MapView
+        android:id="@+id/mv_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>-->
+
+</RelativeLayout>

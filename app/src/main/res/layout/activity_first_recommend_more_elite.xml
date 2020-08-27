@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#ececec"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rly_first_recommend_more_elite_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_index_topbar_height"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rly_first_recommend_more_elite_back"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/back"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="精华帖"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_centerInParent="true"
+            />
+
+
+    </RelativeLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/rfl_first_recommend_more_elite"
+        android:layout_width="match_parent"
+        android:layout_marginTop="44dp"
+        android:layout_height="match_parent">
+
+        <!--下拉刷新用的Header-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+            >
+            <ProgressBar
+
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@null"
+                android:indeterminateDrawable="@drawable/loading_anim"
+                android:indeterminateBehavior="repeat"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_first_recommend_more_elite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ececec"
+            />
+
+
+        <!--上拉加载用的Footer-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+
+            >
+            <ProgressBar
+                android:id="@+id/pb_first_recommend_more_elite_loading"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@null"
+                android:indeterminateDrawable="@drawable/loading_anim"
+                android:indeterminateBehavior="repeat"
+                android:layout_centerInParent="true"
+                />
+            <include layout="@layout/common_rv_nomoredata_splitview"/>
+        </RelativeLayout>
+        <!-- <com.scwang.smartrefresh.layout.footer.FalsifyFooter
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"/>-->
+        <!--  <com.zhyan.secondworld.widget.smartrefresh.foot.MRefreshFooter
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              />-->
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <TextView
+        android:id="@+id/tv_first_recommend_more_elite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="暂无文章！"
+        android:textColor="#b0b0b0"
+        android:textSize="12sp"
+        android:layout_centerInParent="true"
+        />
+</RelativeLayout>

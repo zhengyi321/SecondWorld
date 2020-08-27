@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/rly_forum"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_index_topbar_height"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rly_forum_collect"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@mipmap/selecticon"
+            android:layout_marginLeft="16dp"
+            android:layout_centerVertical="true"
+            />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_forum_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="家书"
+            android:textColor="#000000"
+            android:textSize="17dp"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="120dp"
+            />
+        <RelativeLayout
+            android:id="@+id/rly_forum_search"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="61.5dp"
+            android:visibility="visible"
+            >
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:background="@mipmap/search"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/rly_forum_map"
+            >
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:background="@mipmap/shtlogo"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16.5dp"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--<ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/main_index_topbar_height"
+        android:background="#ececec"
+        />-->
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/rfl_forum"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ececec"
+        android:layout_marginTop="44dp"
+        app:srlEnableFooterFollowWhenLoadFinished="false">
+
+        <!--下拉刷新用的Header-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent">
+
+            <ProgressBar
+
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:indeterminateBehavior="repeat"
+                android:indeterminateDrawable="@drawable/loading_anim" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_forum"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ececec"
+            />
+
+
+        <!--上拉加载用的Footer-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+
+            >
+
+            <ProgressBar
+                android:id="@+id/pb_forum_loading"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:indeterminateBehavior="repeat"
+                android:indeterminateDrawable="@drawable/loading_anim" />
+
+            <include layout="@layout/common_rv_nomoredata_splitview" />
+        </RelativeLayout>
+        <!-- <com.scwang.smartrefresh.layout.footer.FalsifyFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>-->
+        <!--  <com.zhyan.secondworld.widget.smartrefresh.foot.MRefreshFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />-->
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <TextView
+        android:id="@+id/tv_forum"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="暂无文章！"
+        android:textColor="#b0b0b0"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        />
+    <RelativeLayout
+        android:layout_width="47.5dp"
+        android:layout_height="49dp"
+        android:id="@+id/rly_forum_add"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginRight="20dp"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/normaladd"
+            />
+        <!--<ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/addbg"
+            android:layout_centerInParent="true"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/addone"
+            android:layout_centerInParent="true"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/addtwo"
+            android:layout_centerInParent="true"
+            />-->
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lly_forum_mark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="44dp"
+        android:layout_marginLeft="8dp"
+        android:clickable="true"
+        android:visibility="gone"
+
+
+        >
+        <ImageView
+            android:layout_width="11.5dp"
+            android:layout_height="5dp"
+            android:background="@mipmap/acutearrow"
+            android:layout_marginLeft="12dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="152dp"
+            android:orientation="vertical"
+            android:background="@drawable/black_acute_shape"
+            android:paddingRight="11dp"
+            android:clickable="true"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/lly_forum_mark_markloc"
+                android:orientation="horizontal"
+                android:clickable="true"
+                >
+                <ImageView
+                    android:id="@+id/iv_forum_mark_markloc"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@mipmap/markicon"
+                    android:layout_marginLeft="11dp"
+                    android:layout_gravity="center_vertical"
+                    />
+                <TextView
+                    android:id="@+id/tv_forum_mark_markloc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="标记地"
+                    android:textColor="#ffffffff"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="66.5dp"
+                android:layout_height="0.5dp"
+                android:background="#5E5E5E"
+                android:layout_gravity="right"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:id="@+id/lly_forum_mark_markerror"
+                android:orientation="horizontal"
+                android:clickable="true"
+                >
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@mipmap/wrongicon"
+                    android:layout_marginLeft="11dp"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/iv_forum_mark_markerror"
+                    />
+                <TextView
+                    android:id="@+id/tv_forum_mark_markerror"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="经纬报错"
+                    android:textColor="#ffffffff"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="66.5dp"
+                android:layout_height="0.5dp"
+                android:background="#5E5E5E"
+                android:layout_gravity="right"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:id="@+id/lly_forum_mark_mark_apply_manage"
+                android:orientation="horizontal"
+                android:clickable="true"
+                >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@mipmap/applyicon"
+                    android:layout_marginLeft="11dp"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/iv_forum_mark_mark_apply_manage"
+                    />
+                <TextView
+                    android:id="@+id/tv_forum_mark_mark_apply_manage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="申请管理"
+                    android:textColor="#ffffffff"
+                    android:textSize="15sp"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rly_forum_loading"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+    <ImageView
+        android:id="@+id/iv_forum_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/pageloading"
+        android:scaleType="center"
+        android:layout_centerInParent="true"
+
+        />
+    </RelativeLayout>
+</RelativeLayout>

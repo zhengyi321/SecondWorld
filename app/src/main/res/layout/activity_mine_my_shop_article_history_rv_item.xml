@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_marginTop="10dp"
+    android:id="@+id/lly_mine_my_shop_article_history_rv_item"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/white"
+        android:layout_marginLeft="@dimen/guanzhu_rv_item_left_right_margin"
+        android:layout_marginRight="@dimen/guanzhu_rv_item_left_right_margin"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                >
+                <com.et.secondworld.widget.imageview.CircleImageView
+                    android:id="@+id/civ_mine_my_shop_article_history_rv_item_head"
+                    android:layout_width="@dimen/guanzhu_rv_item_head_width_height"
+                    android:layout_height="@dimen/guanzhu_rv_item_head_width_height"
+                    android:src="@mipmap/user"
+                    android:layout_centerVertical="true"
+                    />
+                <ImageView
+                    android:id="@+id/iv_first_guanzhu_rv_item_shop"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@mipmap/shopicon"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                >
+            <TextView
+                android:id="@+id/tv_mine_my_shop_article_history_rv_item_nick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="匿名用户"
+                android:textColor="#ff8e8e8e"
+                android:layout_gravity="center_vertical"
+
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/tv_mine_my_shop_article_history_rv_item_loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="匿名用户"
+                android:textColor="#ffbebebe"
+                android:layout_gravity="center_vertical"
+
+                android:textSize="11sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="75.5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#ececec"
+        >
+        <ImageView
+            android:id="@+id/iv_mine_my_shop_article_history_rv_item_img"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@mipmap/forumad1"
+
+            android:scaleType="centerCrop"
+            />
+        <TextView
+            android:id="@+id/tv_mine_my_shop_article_history_rv_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="他们从世界各个角落，找出被遗忘的美"
+            android:textColor="#ff000000"
+            android:textSize="15sp"
+            android:maxLines="2"
+            android:layout_toRightOf="@id/iv_mine_my_shop_article_history_rv_item_img"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            />
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/first_recommend_rv_item_left_right_margin"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="10dp"
+        >
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@mipmap/shareicon"
+            android:layout_gravity="center_vertical"
+            />
+        <TextView
+            android:id="@+id/tv_mine_my_shop_article_history_rv_item_repost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3333"
+            android:textColor="#ffbebebe"
+            android:textSize="12sp"
+            android:layout_marginLeft="6dp"
+            android:layout_gravity="center_vertical"
+            />
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@mipmap/editicon"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/tv_mine_my_shop_article_history_rv_item_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3333"
+            android:textColor="#ffbebebe"
+            android:textSize="12sp"
+            android:layout_marginLeft="6dp"
+            android:layout_gravity="center_vertical"
+            />
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@mipmap/praiseicon"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/tv_mine_my_shop_article_history_rv_item_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3333"
+            android:textColor="#ffbebebe"
+            android:textSize="12sp"
+            android:layout_marginLeft="6dp"
+            android:layout_gravity="center_vertical"
+            />
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@mipmap/eyeicon"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/tv_mine_my_shop_article_history_rv_item_browses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3333"
+            android:textColor="#ffbebebe"
+            android:textSize="12sp"
+            android:layout_marginLeft="6dp"
+            android:layout_gravity="center_vertical"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

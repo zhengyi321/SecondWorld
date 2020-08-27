@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ececec">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_index_topbar_height"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rly_mine_all_shop_back"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/back"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_mine_all_shop_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全部店铺"
+            android:textColor="@color/black"
+            android:layout_centerInParent="true"
+            android:textSize="14sp"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:background="#ececec"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/white_half_round_shape"
+            android:layout_centerVertical="true"
+            >
+            <ImageView
+                android:layout_width="18.5dp"
+                android:layout_height="18.5dp"
+                android:background="@mipmap/search"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                />
+            <EditText
+                android:id="@+id/et_mine_all_shop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50dp"
+                android:hint="请输入搜索的名称"
+                android:textSize="14sp"
+                android:textColorHint="@color/gray"
+                android:textColor="#999999"
+                android:background="@null"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="按字母排序"
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:drawableRight="@mipmap/down"
+                    android:drawablePadding="5dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    />
+            <Spinner
+                android:id="@+id/sp_mine_all_shop_letter"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:spinnerMode="dropdown"
+                android:dropDownWidth="wrap_content"
+                android:dropDownHorizontalOffset="20dp"
+                android:background="@drawable/spinner_drop_down_shape"
+                android:layout_gravity="right"
+                android:layout_centerInParent="true"
+
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="按行业分类"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:drawableRight="@mipmap/down"
+                android:drawablePadding="5dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                />
+            <Spinner
+                android:id="@+id/sp_mine_all_shop_trade"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:spinnerMode="dropdown"
+                android:dropDownWidth="wrap_content"
+                android:dropDownHorizontalOffset="20dp"
+                android:background="@drawable/spinner_drop_down_shape"
+                android:layout_gravity="right"
+                android:layout_centerInParent="true"
+
+
+                />
+        </RelativeLayout>
+    </LinearLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/rfl_mine_all_shop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:srlEnableFooterFollowWhenLoadFinished="false">
+
+        <!--下拉刷新用的Header-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent">
+
+            <ProgressBar
+
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:indeterminateBehavior="repeat"
+                android:indeterminateDrawable="@drawable/loading_anim" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_mine_all_shop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <!--上拉加载用的Footer-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+
+            >
+
+            <ProgressBar
+                android:id="@+id/pb_mine_all_shop_loading"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:indeterminateBehavior="repeat"
+                android:indeterminateDrawable="@drawable/loading_anim" />
+
+            <include layout="@layout/common_rv_nomoredata_splitview" />
+        </RelativeLayout>
+        <!-- <com.scwang.smartrefresh.layout.footer.FalsifyFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>-->
+        <!--  <com.zhyan.secondworld.widget.smartrefresh.foot.MRefreshFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />-->
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+</LinearLayout>

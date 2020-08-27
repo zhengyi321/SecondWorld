@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="54dp"
+
+    app:layout_collapseMode="pin">
+    <LinearLayout
+        android:id="@+id/title_center_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+
+        <com.et.secondworld.widget.behavior.CircleImageView
+            android:id="@+id/title_uc_avater"
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:src="@mipmap/head" />
+
+        <TextView
+            android:id="@+id/title_uc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:paddingRight="15dp"
+            android:text="Lover's Day"
+            android:textColor="#333333"
+            android:textSize="28px" />
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/ib_mine_setting"
+        android:layout_width="21.9dp"
+        android:layout_height="20.8dp"
+        android:background="@mipmap/setting"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:layout_marginRight="11dp"
+        android:layout_centerVertical="true"
+
+        />
+</RelativeLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_index_topbar_height"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+        android:id="@+id/rly_forum_at_back"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:textColor="#aaaaaa"
+            android:textSize="17sp"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提醒谁看"
+            android:textColor="#5e5e5e"
+            android:textSize="17sp"
+            android:layout_centerInParent="true"/>
+        <RelativeLayout
+            android:id="@+id/rly_forum_at_finish"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="完成"
+                android:textColor="#2374ff"
+                android:textSize="17sp"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:orientation="horizontal"
+                android:layout_marginRight="20dp"
+                >
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/graysearch"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <EditText
+                    android:id="@+id/et_forum_at_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="搜索"
+                    android:textColorHint="#c7c7c7"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:background="@null"
+                    />
+            </LinearLayout>
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/rfl_forum_at"
+                android:layout_width="match_parent"
+                android:layout_marginTop="43dp"
+                android:layout_height="match_parent">
+
+                <!--下拉刷新用的Header-->
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/transparent"
+                    >
+                    <ProgressBar
+
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@null"
+                        android:indeterminateDrawable="@drawable/loading_anim"
+                        android:indeterminateBehavior="repeat"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_forum_at"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    />
+
+                <!--上拉加载用的Footer-->
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/transparent"
+                    >
+                    <ProgressBar
+
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@null"
+                        android:indeterminateDrawable="@drawable/loading_anim"
+                        android:indeterminateBehavior="repeat"
+                        android:layout_centerInParent="true"
+                        />
+                </RelativeLayout>
+
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ececec"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_index_topbar_height"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rly_forum_detail_one_back"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/jubclose"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="305dp"
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="求助详细说明（选填）"
+            android:textSize="14sp"
+            android:textColorHint="#999999"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginRight="25dp"
+            android:maxLines="5"
+            />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:background="@drawable/blue_half_round_dash_shape"
+            android:layout_marginLeft="21dp"
+            android:layout_gravity="center_vertical"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:textSize="15sp"
+                android:textColor="#219fff"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:background="@drawable/blue_half_round_shape"
+            android:layout_marginLeft="21dp"
+            android:layout_marginRight="21dp"
+            android:layout_gravity="center_vertical"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="求助"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

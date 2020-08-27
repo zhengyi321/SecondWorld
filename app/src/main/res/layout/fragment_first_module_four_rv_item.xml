@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#f9fcff"
+    android:layout_marginTop="5dp"
+
+    android:paddingBottom="20dp"
+    android:id="@+id/lly_first_module_four_rv_item"
+    >
+<!--    android:id="@+id/lly_find_item"-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal">
+            <com.et.secondworld.widget.imageview.CircleImageView
+                android:id="@+id/civ_first_module_four_rv_item_head"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/user"
+                />
+            <TextView
+                android:id="@+id/tv_first_module_four_rv_item_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="匿名用户"
+                android:textColor="#4b4b4b"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_first_module_four_rv_item_readers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/liulan"
+            android:text="3200"
+            android:textColor="#4b4b4b"
+            android:textSize="12sp"
+            android:drawablePadding="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+
+
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_first_module_four_rv_item_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:visibility="gone"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rly_first_module_four_rv_item_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/iv_first_module_four_rv_item_one_img1"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@mipmap/findad"
+                android:scaleType="fitXY"
+                />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/lly_first_module_four_rv_item_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            >
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
+                <ImageView
+                    android:id="@+id/iv_first_module_four_rv_item_two_img1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/findad"
+                    android:scaleType="centerCrop"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_first_module_four_rv_item_two_img2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/findad"
+                    android:scaleType="centerCrop"
+
+                    />
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/lly_first_module_four_rv_item_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            >
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
+                <ImageView
+                    android:id="@+id/iv_first_module_four_rv_item_three_img1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/findad"
+                    android:scaleType="centerCrop"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_first_module_four_rv_item_three_img2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/findad"
+                    android:scaleType="centerCrop"
+
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                >
+                <ImageView
+                    android:id="@+id/iv_first_module_four_rv_item_three_img3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:background="@mipmap/findad"
+                    />
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="8.5dp"
+        android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:visibility="gone"
+        android:layout_marginTop="4dp"
+        android:background="#ec5c44"
+        >
+        <TextView
+            android:id="@+id/tv_first_module_four_rv_item_nums"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_first_module_four_rv_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="美国确诊超10万怎么回事?美国
+疫情最新消息动态"
+                android:textSize="17sp"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

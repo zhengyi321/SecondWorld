@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/lly_forum_search"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_index_topbar_height"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        >
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            >
+            <Spinner
+                android:id="@+id/sp_forum_search_accountid_title"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:spinnerMode="dropdown"
+                android:dropDownWidth="wrap_content"
+                android:dropDownHorizontalOffset="20dp"
+                android:background="@drawable/spinner_drop_down_shape"
+                android:layout_gravity="right"
+
+                />
+        </RelativeLayout>
+
+
+
+        <EditText
+            android:id="@+id/et_forum_search_input"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="34dp"
+            android:background="@drawable/gray_half_round_shape"
+            android:hint="请输入搜索 用户名/账号ID"
+            android:textColorHint="#999999"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:visibility="visible"
+            />
+        <RelativeLayout
+            android:id="@+id/rly_forum_search_cancel"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:visibility="visible"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="取消"
+                android:textColor="#ff5ac6de"
+                android:textSize="14sp"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#efefef"/>
+
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >-->
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/rfl_forum_search"
+            android:layout_width="match_parent"
+            app:srlEnableFooterFollowWhenLoadFinished="false"
+            android:background="@color/white"
+            android:layout_height="match_parent">
+
+            <!--下拉刷新用的Header-->
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/transparent"
+                >
+                <ProgressBar
+
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@null"
+                    android:indeterminateDrawable="@drawable/loading_anim"
+                    android:indeterminateBehavior="repeat"
+                    android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_forum_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+
+
+            <!--上拉加载用的Footer-->
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/transparent"
+
+                >
+                <ProgressBar
+                    android:id="@+id/pb_forum_search_loading"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@null"
+                    android:indeterminateDrawable="@drawable/loading_anim"
+                    android:indeterminateBehavior="repeat"
+                    android:layout_centerInParent="true"
+                    />
+                <include layout="@layout/common_rv_nomoredata_splitview"/>
+            </RelativeLayout>
+            <!-- <com.scwang.smartrefresh.layout.footer.FalsifyFooter
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"/>-->
+            <!--  <com.zhyan.secondworld.widget.smartrefresh.foot.MRefreshFooter
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  />-->
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+<!--
+    </LinearLayout>-->
+</LinearLayout>

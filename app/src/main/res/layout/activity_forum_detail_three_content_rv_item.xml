@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        >
+        <TextView
+            android:id="@+id/tv_forum_detail_three_titlefive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:layout_alignParentLeft="true"
+            android:textColor="#a5a7a5"
+            android:textSize="140sp"
+            />
+        <ImageView
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/grayrail"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Allbirds：\n
+一同寻找大自然的灵感"
+            android:textColor="#7e7e7e"
+            android:textSize="14sp"
+            android:layout_below="@id/tv_forum_detail_three_titlefive"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第一步练习气息，每天坚持练习1个小时
+练习方法有很多种，可以参考专业老师的方法，
+第二步，控制你的声带"
+        android:textColor="#b0b0b0"
+        android:textSize="14sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="69dp"
+        android:layout_marginTop="28dp"
+        />
+    <ImageView
+        android:id="@+id/iv_forum_detail_three_img_five"
+        android:layout_width="match_parent"
+        android:layout_height="208dp"
+        android:layout_marginTop="25dp"
+        android:background="@mipmap/forumdetailthree2"
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="31dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@mipmap/share"
+            android:layout_gravity="center_vertical"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6.5dp"
+            android:text="12"
+            android:textColor="#4b4b4b"
+            android:textSize="17sp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="17dp"
+            android:background="@mipmap/taskcenter"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6.5dp"
+            android:text="22"
+            android:textColor="#4b4b4b"
+            android:textSize="17sp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="17dp"
+            android:background="@mipmap/thumbs"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6.5dp"
+            android:text="22"
+            android:textColor="#4b4b4b"
+            android:textSize="17sp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="15dp"
+            android:background="@mipmap/browse"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6.5dp"
+            android:text="220"
+            android:textColor="#4b4b4b"
+            android:textSize="17sp"/>
+
+    </LinearLayout>
+</LinearLayout>

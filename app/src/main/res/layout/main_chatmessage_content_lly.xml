@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_main_message_chatmessage_content_bg"
+    android:layout_marginTop="0dp"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/lly_main_chatmessage_content_systeminfo"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:background="@drawable/listview_selector"
+        android:orientation="horizontal"
+
+        >
+        <RelativeLayout
+            android:layout_width="@dimen/zero"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            >
+            <TextView
+                android:id="@+id/tv_main_chatmessage_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="12sp"
+                android:textColor="#aaaaaa"
+                android:text="06-28" />
+        <ImageView
+            android:id="@+id/iv_main_chatmessage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/systeminformation"
+            android:layout_below="@id/tv_main_chatmessage_time"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="@dimen/zero"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:orientation="vertical"
+            >
+        <TextView
+            android:id="@+id/tv_main_chatmessage_systemmessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="5dp"
+            android:text="系统消息" />
+
+        <TextView
+            android:id="@+id/tv_main_chatmessage_new_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:text="还没有收到新消息哦"
+            android:textColor="#8E8E8E"
+            android:textSize="13sp"
+            android:layout_marginTop="7.5dp"
+            android:layout_marginLeft="5dp"
+            />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="@dimen/zero"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_main_message_chatmessage_gray_splite_line" />
+    <FrameLayout
+        android:id="@+id/fly_main_chatmessage_content_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView4"
+        ></FrameLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/gray_round_shape"
+        android:alpha="0.5"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="40dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="切换"
+            android:textSize="18sp"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+</LinearLayout>

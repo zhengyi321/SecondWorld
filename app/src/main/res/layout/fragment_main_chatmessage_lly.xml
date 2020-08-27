@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#ececec"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ececec"
+        android:orientation="vertical">
+   <!-- <include layout="@layout/main_chatmessage_topbar_lly"/>-->
+    <include layout="@layout/main_chatmessage_content_lly"/>
+    </LinearLayout>
+
+</RelativeLayout>

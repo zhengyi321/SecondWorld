@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#eeeeee">
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_index_topbar_height"
+        android:background="@color/transparent"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发现"
+            android:textColor="#000000"
+            android:textSize="17dp"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/rfl_first_guanzhu"
+        android:layout_width="match_parent"
+        app:srlEnableFooterFollowWhenLoadFinished="false"
+        android:layout_height="match_parent">
+
+        <!--下拉刷新用的Header-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+            >
+            <ProgressBar
+
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@null"
+                android:indeterminateDrawable="@drawable/loading_anim"
+                android:indeterminateBehavior="repeat"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_first_guanzhu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+
+        <!--上拉加载用的Footer-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/transparent"
+            >
+            <ProgressBar
+                android:id="@+id/pb_first_guanzhu_loading"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@null"
+                android:indeterminateDrawable="@drawable/loading_anim"
+                android:indeterminateBehavior="repeat"
+                android:layout_centerInParent="true"
+                />
+            <include layout="@layout/common_rv_nomoredata_splitview"/>
+        </RelativeLayout>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <TextView
+        android:id="@+id/tv_first_guanzhu_weiguanzhu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您尚未关注他人,赶紧关注一个吧！"
+        android:textColor="#b0b0b0"
+        android:textSize="12sp"
+        android:layout_centerInParent="true"
+        />
+    <RelativeLayout
+        android:id="@+id/rly_first_guanzhu_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone"
+        >
+    <ImageView
+        android:id="@+id/iv_first_guanzhu_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/pageloading"
+        android:layout_centerInParent="true"
+        android:scaleType="center"
+        android:visibility="visible"
+        />
+    </RelativeLayout>
+
+</RelativeLayout>

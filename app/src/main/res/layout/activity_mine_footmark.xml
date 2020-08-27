@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.baidu.mapapi.map.MapView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_index_topbar_height"
+            android:background="@color/white"
+            >
+            <RelativeLayout
+                android:id="@+id/rly_footmark_back"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/back"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="15dp"/>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的足迹"
+                android:textColor="#5e5e5e"
+                android:textSize="17sp"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:orientation="horizontal"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tly_footmark"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:tabTextColor="#999999"
+                        app:tabSelectedTextColor="#ff5ac6de"
+                        app:tabIndicatorColor="#ff5ac6de"
+                        app:tabIndicatorFullWidth="false"
+                        />
+                </RelativeLayout>
+
+            </LinearLayout>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_footmark"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="43dp"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

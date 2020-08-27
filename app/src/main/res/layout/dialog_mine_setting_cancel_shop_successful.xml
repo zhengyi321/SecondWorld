@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="274dp"
+        android:background="@drawable/white_acute_angle_shape"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="82dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            >
+            <ImageView
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:background="@mipmap/cancel"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="已成功注销店铺"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="22dp"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前店铺注销之后将无法用此店铺的所属权益"
+            android:textColor="#959595"
+            android:textSize="11sp"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_gravity="center_horizontal"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="@drawable/blue_half_round_shape"
+                android:layout_marginLeft="37dp"
+                android:layout_marginRight="34dp"
+                android:layout_marginTop="36dp"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="确认"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

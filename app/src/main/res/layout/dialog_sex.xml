@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+
+    android:background="@color/transparent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/lly_sex_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/white_acute_angle_shape"
+        >
+        <RelativeLayout
+            android:id="@+id/rly_sex_man"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_sex_man"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="男"
+
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#ececec"
+            />
+        <RelativeLayout
+            android:id="@+id/rly_sex_woman"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            >
+            <TextView
+                android:id="@+id/tv_sex_woman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"
+
+                android:textSize="14sp"
+                />
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#ececec"
+            />
+        <RelativeLayout
+            android:id="@+id/rly_sex_no"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            >
+            <TextView
+                android:id="@+id/tv_sex_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="不显示"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"
+
+                android:textSize="14sp"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:id="@+id/rly_sex_cancel"
+        android:layout_below="@id/lly_sex_select"
+        android:background="@drawable/white_acute_angle_shape"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:textSize="14sp"
+            android:textColor="#ff5ac6de"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+</RelativeLayout>

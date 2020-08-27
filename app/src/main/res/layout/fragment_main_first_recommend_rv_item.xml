@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/lly_first_recommend_rv_item"
+    android:layout_marginLeft="22dp"
+    android:layout_marginRight="23dp"
+    android:layout_marginBottom="19dp"
+    android:background="@color/white">
+    <TextView
+        android:id="@+id/tv_first_recommend_rv_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="潍坊市最新创业担保贷款政策出炉"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        />
+    <RelativeLayout
+        android:id="@+id/rly_first_recommend_rv_item_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/tv_first_recommend_rv_item_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="测试测试"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_first_recommend_rv_item_content"
+            android:text="全部"
+            android:textColor="#2374ff"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <com.et.secondworld.widget.imageview.RoundImageView
+        android:id="@+id/riv_first_recommend_rv_item_img"
+        android:layout_width="match_parent"
+        android:layout_height="148dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/mainfirst"
+        />
+
+</LinearLayout>

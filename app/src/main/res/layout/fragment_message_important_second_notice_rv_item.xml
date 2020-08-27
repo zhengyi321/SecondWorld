@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="96dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:background="@color/white"
+        android:id="@+id/rly_message_important_notice_rv_item"
+
+        >
+
+
+    <TextView
+        android:id="@+id/tv_message_important_notice_rv_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="昨天"
+        android:textSize="12sp"
+        android:textColor="#BEBEBE"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="10dp"
+        />
+    <RelativeLayout
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="17dp"
+        android:background="@mipmap/noticebg"
+        android:layout_below="@id/tv_message_important_notice_rv_item_time"
+        >
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@mipmap/notice"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_message_important_notice_rv_item_time"
+        android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_message_important_notice_rv_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="系统消息"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:id="@+id/tv_message_important_notice_rv_item_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="论坛小助手恭喜你有1个模板待领取"
+                android:textSize="13sp"
+                android:textColor="#8E8E8E"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5天前"
+                android:textSize="13sp"
+                android:textColor="#8E8E8E"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"/>
+
+
+    </LinearLayout>
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ececec"
+        android:layout_marginLeft="70dp"
+        />
+
+</LinearLayout>

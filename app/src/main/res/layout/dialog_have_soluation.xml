@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/transparent"
+    android:layout_gravity="center_horizontal"
+    android:alpha="12"
+
+    >
+
+    <LinearLayout
+        android:layout_width="296dp"
+        android:layout_height="252dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="111dp"
+            android:background="@color/white">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@mipmap/issoluation"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="是否确认
+该问题已解决？"
+            android:textColor="#ff000000"
+            android:textSize="17sp"
+            android:layout_gravity="center_horizontal"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <RelativeLayout
+                android:layout_width="106dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="33.5dp"
+                android:background="@drawable/gray_acute_shape"
+                android:layout_marginLeft="40dp"
+                android:id="@+id/rly_have_soluation_cancel"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="未解决"
+                    android:textColor="#ff000000"
+                    android:textSize="14sp"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="106dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="33.5dp"
+                android:background="@drawable/blue_acute_shape"
+                android:layout_marginRight="40.5dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/rly_have_soluation_ok"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已解决"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

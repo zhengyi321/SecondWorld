@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_index_topbar_height"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rly_mine_setting_service_agreement_back"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/back"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="服务协议"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ececec"/>
+
+    <com.et.secondworld.widget.SpringScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="《四海图用户协议及免责申明》"
+        android:textColor="@color/black"
+        android:layout_marginTop="23dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="26dp"
+        android:text="        在使用本平台的所有功能之前，请您务必仔细阅读并透彻理解本声明。您可以选择不使用本平台，但如果您使用本平台，您的使用行为将被视为对本声明全部内容的认可.
+   \n     免责声明:鉴于本平台使用非人工检索/分析方式，无法确定您输入的条件进行是否合法，所以本平台对检索/分析出的结果不承担 责任。如果因以本平台的检索/分析结果作为任何商业行为或者学术 研究的依据而产生不良后果，本平台不承担任何法律责任。
+\n      关于隐私权:访问者在本平台注册时提供的一些个人资料，本平台除您本人同意外不会将用户的任何资料以任何方式泄露给第三方。当政府部门、司法机关等依照法定程序要求本平台披露个人资料时，本平台将根据执法单位之要求或为公共安全之目的提供个人资料，在此情况下的披露，本平台不承担任何责任。
+\n      1、一切移动客户端用户在下载开浏览四海图app软件时均被视为已经仔细阅读本条款并完全同意。凡以任何方式登陆本APP,或直接、 间接使用本APP资料者，均被视为自愿接受本网站相关声明和用户服务协议的约束。
+\n      2、四海图app 转载的内容并不代表四海图app之意见及观点，也不意味着本网赞同其观点或证实其内容的真实性。
+\n      3、四海图app转载的文字、图片、音视频等资料均由本APP用户 提供，其真实性、准确性和合法性由信息发布人负责。四海图APP不提供任何保证，并不承担任何法律责任。
+\n      4、四海图app 所转载的文字、图片、音视频等资料，如果侵犯了 第三方的知识产权或其他权利，责任由作者或转载者本人承担，本 APP对此不承担责任。
+\n      5、四海图app不保证为向用户提供便利而设置的外部链接的准确 性和完整性，同时，对于该外部链接指向的不由四海图app实际控制的任何网页上的内容，四海图app 不承担任何责任。
+\n      6、用户明确并同意其使用四海图app网络服务所存在的风险将完 全由其本人承担;因其使用四海图app网络服务而产生的一切后果也由 其本人承担，四海图app 对此不承担任何责任。
+\n      7、除四海图app注明之服务条款外，其它因不当使用本APP而导 致的任何意外、疏忽、合约毁坏、诽谤、版权或其他知识产权侵犯及 其所造成的任何损失，四海图app概不负责，亦不承担任何法律责任。
+\n      8、对于因不可抗力或因黑客攻击、通讯线路中断等四海图app不 能控制的原因造成的网络服务中断或其他缺陷，导致用户不能正常使 用四海图app，四海图app 不承担任何责任，但将尽力减少因此给用户造成的损失或影响。
+\n      9、本声明未涉及的问题请参见国家有关法律法规，当本声明与 国家有关法律法规冲突时，以国家法律法规为准。
+\n      10、本申明关于版权问题:
+\n      （a）凡本平台注明“四海图”、“四海图的所有作品，其版权属于四海图和本平台所有。其他媒体、网站或个人转载使用时不得进行商业 性的原版原式的转载，也不得歪曲和篡改本平台所发布的内容。
+\n      （b）凡本平台转载其它媒体作品的目的在于传递更多信息，并 不代表本平台赞同其观点和对其真实性负责:其他媒体、网站或个人转载使用时必须保留注明的，并自负法律责任。
+\n      （c）被本平台授权使用的单位，不应超越授权范围。
+\n      （d）本平台提供的资料如与相关纸质文本不符，以纸质文本为准。
+\n      （e）如因作品内容、版权和其它问题需要同本平台联系的，请在本平台发布该作品后的30日内进行。
+
+\n      11: 当您开启设备定位功能并使用四海图基于位置提供的相关服务时，我们会收集有关您的位置信息。当您使用摆摊和事件等相关定位功能时,我们会将您当前的地理位置展示出来，并且所有用户都能看到您所展示的地理位置,也许会造成您的位置泄露，如果您不想展示当前地理位置,请勿使用这些功能,一旦使用就默认视您同意且愿意展示当前位置，四海图APP不提供任何保证，也不为用户隐私定位泄露承担任何法律责任。
+\n      12:本网站及平台相关声明版权及其修改权、更新权和最终解释权均属四海图app所有。
+
+\n      联系我们可以通发送邮件至postmaster@et-stars.cn 咨询.一般情况下，我们将在三天之内回复。
+
+
+"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        />
+
+        </LinearLayout>
+
+    </com.et.secondworld.widget.SpringScrollView>
+</LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_index_topbar_height"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rly_mine_setting_shop_cancel_back"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/back"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注销店铺"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/main_index_topbar_height"
+        android:background="#ececec"/>
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注销店铺须知"
+        android:textColor="@color/black"
+        android:layout_marginTop="77dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="123dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="26dp"
+        android:text="        欢迎您使用潍坊论坛软件及服务！
+\n        为使用论坛软件（以下统称'本软件'）及
+\n\n服务（以下统称'本服务')协议其他的内容容
+协议其他的内容容协议其他的内容容协议其他
+的内容容。服务（以下统称'本服务')协议其他
+的内容容协议其他的内容容协议其他的内容容
+协议其他的内容容。
+\n\n服务（以下统称'本服务')协议其他的内容容
+协议其他的内容容协议其他的内容容协议其他
+的内容容。服务（以下统称'本服务')协议其他
+的内容容协议其他的内容容协议其他的内容容
+协议其他的内容容。
+"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/blue_half_round_shape"
+        android:layout_marginLeft="37dp"
+        android:layout_marginRight="34dp"
+        android:layout_marginBottom="40dp"
+        android:layout_alignParentBottom="true"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="同意注销"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+</RelativeLayout>

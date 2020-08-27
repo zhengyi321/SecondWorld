@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="@dimen/main_bottom_height"
+    android:background="@color/transparent"
+    android:layout_alignParentBottom="true"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    >
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:paddingTop="4dp" >
+
+        <RadioButton
+            android:id="@+id/rb_main_bottom_firstpage"
+            style="@style/common_bottom"
+            android:checked="true"
+            android:drawableTop="@drawable/main_bottom_shouye_pic_selector"
+            android:tag="main_bottom_index"
+            android:text="@string/first_page"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            />
+
+        <RadioButton
+            android:id="@+id/rb_main_bottom_forum"
+            style="@style/common_bottom"
+            android:drawableTop="@drawable/main_bottom_luntan_pic_selector"
+            android:layout_gravity="center"
+            android:tag="main_bottom_release"
+            android:text="@string/forum" />
+        <RadioButton
+            android:id="@+id/rb_main_bottom_find"
+            style="@style/common_bottom"
+            android:drawableTop="@drawable/main_bottom_faxian_pic_selector"
+            android:layout_gravity="center"
+            android:tag="main_bottom_release"
+            android:text="@string/find" />
+        <RadioButton
+            android:id="@+id/rb_main_bottom_message"
+            style="@style/common_bottom"
+            android:drawableTop="@drawable/main_bottom_xiaoxi_pic_selector"
+            android:layout_gravity="center"
+            android:tag="main_bottom_release"
+            android:text="@string/message" />
+
+        <RadioButton
+            android:id="@+id/rb_main_bottom_mine"
+            style="@style/common_bottom"
+            android:layout_gravity="center"
+            android:tag="main_bottom_advice"
+            android:drawableTop="@drawable/main_bottom_mine_pic_selector"
+            android:text="@string/mine" />
+
+
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/point_red"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                />
+            <!--        android:drawableTop="@drawable/main_bottom_find_pic_selector"-->
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/point_red"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                />
+            <!--        android:drawableTop="@drawable/main_bottom_find_pic_selector"-->
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/point_red"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                />
+            <!--        android:drawableTop="@drawable/main_bottom_find_pic_selector"-->
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/point_red"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"
+                />
+            <!--        android:drawableTop="@drawable/main_bottom_find_pic_selector"-->
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/point_red"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                />
+            <!--        android:drawableTop="@drawable/main_bottom_find_pic_selector"-->
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

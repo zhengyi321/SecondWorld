@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.et.secondworld">
+    <!-- 访问网络，进行地图相关业务数据请求，包括地图数据，路线规划，POI检索等 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取网络状态，根据网络状态切换进行数据请求网络转换 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 读取外置存储。如果开发者使用了so动态加载功能并且把so文件放在了外置存储区域，则需要申请该权限，否则不需要 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 写外置存储。如果开发者使用了离线地图，并且数据写在外置存储区域，则需要申请该权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- Required -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"
+        tools:ignore="MockLocation,ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!-- 访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!--腾讯地图 SDK 要求的权限(开始)-->
+    <!--访问网络获取地图服务-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--检查网络可用性-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 访问WiFi状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--需要外部存储写权限用于保存地图缓存-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--获取 device id 辨别设备-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <!--腾讯地图 SDK 要求的权限(结束)-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+<!--    android:hardwareAccelerated="true"  解决加载圆形头像出现方块背景-->
+    <application
+        android:name="com.et.secondworld.application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+
+        android:hardwareAccelerated="false"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:usesCleartextTraffic="true"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <meta-data
+            android:name="TencentMapSDK"
+            android:value="UYYBZ-UZQCP-6O3D2-VMYMT-JG3R3-B5FP6"/>
+        <!-- Android 7.0 文件共享配置，必须配置 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/image_picker" />
+        </provider>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="l7dW7PMnGK6mQI6iGw8MoSlKwtY9QNnk" >
+        </meta-data>
+        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
+        </service>
+        <activity
+            android:name="com.et.secondworld.TecentMapView2Activity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+<!--        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />-->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+        <!-- 微信支付 -->
+
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.et.secondworld.first.fragment.FirstReCommendMoreActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.mine.setting.MineSettingReportActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.mine.MinePerfectDataActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.mine.MinePerfectDataUpdateActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.mine.MineEditDataNickActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.mine.MineEditDataTradeActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.mine.MineShopEditDataTelActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.TecentMapViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.forum.ForumEditActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.forum.ForumSearchActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.VisitOthersShopActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.find.ForumShopTimesPayActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.mine.MineShopEditDataActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.mine.MineShopEditDataChangeActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.shanhuxinxi.ShanHuXinXiActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.first.fragment.FirstReCommendMoreEliteActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.mine.MineEditDataPersonnalNoteActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.mine.MineEditDataActivity"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.et.secondworld.mine.MineGuanZhuActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.MineFansActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.MineFootMarkActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.forum.ForumDetailOneActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.forum.ForumDetailTwoActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.find.ForumDetailThreeActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.forum.ForumModulSelectOneActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.forum.ForumModulSelectTwoActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.forum.ForumPostTypeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.LoginActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.MineMyShopActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.MineAllShopActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.SearchActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mapview.MapPostNormalActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mapview.MapPostExtendActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.SearchHistoryActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.ExtendActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.spread.SpreadActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.RegisterActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+
+        <activity
+            android:name="com.et.secondworld.widget.imagepicker.activity.ImagePickerActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.widget.imagepicker.activity.ImagePreActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.MineSettingActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.setting.MineSettingManageActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.setting.MineSettingMessageNoticeActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.setting.MineSettingTradeRecordActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.setting.MineSettingHelpAndBackActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.setting.MineSettingServiceAgreeMentActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.setting.MineSettingSercetPolicyActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.setting.MineSettingAboutUSActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.setting.MineSettingShopCancelActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.huanxin.ui.EaseDingAckUserListActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.forum.ForumDetailCommentBackActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.forum.ForumPostNormalActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.MineOpenShopActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.VisitOthersActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.forum.ForumAtActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.forum.ForumLocActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.message.MessageCommentAndAtBackActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.message.MessageImportantNoticeDetailActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.widget.imageview.NormalImagePreActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+
+             />
+        <activity
+            android:name="com.et.secondworld.widget.imageview.HeadBgImagePreActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+
+             />
+        <activity
+            android:name="com.et.secondworld.widget.imageview.ShopHeadBgImagePreActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+
+             />
+        <activity
+            android:name="com.et.secondworld.message.MessageCommentBackActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.huanxin.ui.ChatActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.huanxin.ui.EaseShowBigImageActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.SearchVillageShopActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mapview.ApplyForVillageActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.forum.EmergencyHelpPostActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.SearchVillageShopMoreActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.LoginNoPassActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.ForgetPassActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.ForgetPassIdentifyActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.ResetPassIdentifyActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.ResetPassActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.mine.MineShopArticleHistoryActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.et.secondworld.RegisterByPassActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:hardwareAccelerated="false"
+             />
+        <activity
+            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="false"
+            >
+        </activity>
+       <!-- <activity android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            >
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:launchMode="singleTask"
+            android:name="com.sina.weibo.sdk.share.WbShareTransActivity">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>-->
+        <activity
+            android:name="com.umeng.socialize.editorpage.ShareActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:excludeFromRecents="true"
+            />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+
+        <provider
+            android:authorities="com.tencent.tauth.fileproviderzz"
+            android:name="com.tencent.tauth.TAuthFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+        <!--&lt;!&ndash; 设置环信应用的AppKey -->
+        <meta-data android:name="EASEMOB_APPKEY"  android:value="1101200408019322#jiuzhoutu" />
+        <!-- 声明SDK所需的service SDK核心功能-->
+        <service android:name="com.hyphenate.chat.EMChatService" android:exported="true"/>
+        <service android:name="com.hyphenate.chat.EMJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true"
+            />
+        <!-- 声明SDK所需的receiver -->
+        <receiver android:name="com.hyphenate.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <!-- 可选filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <uses-library android:name="org.apache.http.legacy" android:required="true"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 访问手机当前状态, 需要device id用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+</manifest>
